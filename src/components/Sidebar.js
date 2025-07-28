@@ -1,44 +1,72 @@
 import React from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import './Sidebar.css';
 
-const navItems = [
-  { to: '/dashboard', label: 'Dashboard', icon: '🏠' },
-  { to: '/form', label: 'Form Section', icon: '📝' },
-  { to: '/invoice', label: 'Invoice Creation', icon: '📄' },
-];
-
-function Sidebar() {
-  const { logout } = useAuth();
+function Sidebar({ isOpen, onClose }) {
+  const location = useLocation();
   const navigate = useNavigate();
+  const { logout } = useAuth();
 
   const handleLogout = () => {
     logout();
     navigate('/login');
+    if (onClose) onClose(); // Close sidebar on mobile
+  };
+
+  const handleNavClick = () => {
+    if (onClose) onClose(); // Close sidebar on mobile when nav item is clicked
   };
 
   return (
-    <aside className="sidebar">
-      <div className="sidebar-header">Digital CA</div>
+    <div className={`sidebar ${isOpen ? 'sidebar-open' : ''}`}>
+      <div className="sidebar-header">
+        <span className="sidebar-title">Digital CA</span>
+      </div>
+      
       <nav className="sidebar-nav">
-        {navItems.map((item) => (
-          <NavLink
-            key={item.to}
-            to={item.to}
-            className={({ isActive }) =>
-              isActive ? 'sidebar-link active' : 'sidebar-link'
-            }
-          >
-            <span className="sidebar-icon">{item.icon}</span>
-            {item.label}
-          </NavLink>
-        ))}
+        <Link 
+          to="/dashboard" 
+          className={`sidebar-link ${location.pathname === '/dashboard' ? 'active' : ''}`}
+          onClick={handleNavClick}
+        >
+          <span className="sidebar-icon">📊</span>
+          <span>Dashboard</span>
+        </Link>
+        
+        <Link 
+          to="/form" 
+          className={`sidebar-link ${location.pathname === '/form' ? 'active' : ''}`}
+          onClick={handleNavClick}
+        >
+          <span className="sidebar-icon">📝</span>
+          <span>Form Section</span>
+        </Link>
+        
+        <Link 
+          to="/invoice" 
+          className={`sidebar-link ${location.pathname === '/invoice' ? 'active' : ''}`}
+          onClick={handleNavClick}
+        >
+          <span className="sidebar-icon">🧾</span>
+          <span>Invoice Creation</span>
+        </Link>
+        
+        <Link 
+          to="/charts" 
+          className={`sidebar-link ${location.pathname === '/charts' ? 'active' : ''}`}
+          onClick={handleNavClick}
+        >
+          <span className="sidebar-icon">📈</span>
+          <span>Charts</span>
+        </Link>
       </nav>
+      
       <button className="sidebar-logout" onClick={handleLogout}>
-        🚪 Logout
+        <span className="sidebar-icon">🚪</span>
+        <span>Logout</span>
       </button>
-    </aside>
+    </div>
   );
 }
 

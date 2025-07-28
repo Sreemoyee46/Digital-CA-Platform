@@ -9,9 +9,11 @@
   position: fixed;
   left: 0;
   top: 0;
-  z-index: 100;
+  z-index: 999;
   box-shadow: 2px 0 12px rgba(30, 60, 114, 0.07);
+  transition: transform 0.3s ease;
 }
+
 .sidebar-header {
   font-size: 1.5rem;
   font-weight: 700;
@@ -20,12 +22,19 @@
   letter-spacing: 0.05em;
   background: #22304a;
 }
+
+.sidebar-title {
+  display: block;
+}
+
 .sidebar-nav {
   display: flex;
   flex-direction: column;
   gap: 6px;
   padding: 18px 0;
+  flex: 1;
 }
+
 .sidebar-link {
   display: flex;
   align-items: center;
@@ -38,18 +47,24 @@
   border-left: 4px solid transparent;
   transition: background 0.18s, color 0.18s, border-color 0.18s;
 }
+
 .sidebar-link:hover {
   background: #22304a;
   color: #fff;
 }
+
 .sidebar-link.active {
   background: #3a8dde22;
   color: #fff;
   border-left: 4px solid #3a8dde;
 }
+
 .sidebar-icon {
   font-size: 1.25em;
+  min-width: 20px;
+  text-align: center;
 }
+
 .sidebar-logout {
   margin: 24px 16px 16px 16px;
   padding: 12px 0;
@@ -67,24 +82,61 @@
   justify-content: center;
   gap: 8px;
 }
+
 .sidebar-logout:hover {
   background: #c0392b;
 }
-@media (max-width: 800px) {
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
   .sidebar {
-    width: 60px;
-    min-width: 60px;
+    width: 280px;
+    transform: translateX(-100%);
   }
+  
+  .sidebar.sidebar-open {
+    transform: translateX(0);
+  }
+  
   .sidebar-header {
-    font-size: 1.1rem;
-    padding: 18px 0 12px 0;
+    font-size: 1.3rem;
+    padding: 24px 0 20px 0;
   }
+  
   .sidebar-link {
-    padding: 10px 10px;
-    font-size: 1rem;
-    justify-content: center;
+    padding: 14px 24px;
+    font-size: 1.1rem;
   }
+  
   .sidebar-link span:not(.sidebar-icon) {
-    display: none;
+    display: inline;
+  }
+  
+  .sidebar-logout {
+    margin: 20px 12px 12px 12px;
+    padding: 14px 0;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 260px;
+  }
+  
+  .sidebar-header {
+    font-size: 1.2rem;
+    padding: 20px 0 16px 0;
+  }
+  
+  .sidebar-link {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+  
+  .sidebar-logout {
+    margin: 16px 10px 10px 10px;
+    padding: 12px 0;
+    font-size: 1rem;
   }
 } 

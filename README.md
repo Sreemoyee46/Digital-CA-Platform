@@ -2,6 +2,9 @@
 
 A comprehensive React.js web application designed for Chartered Accountants (CAs) to manage their practice digitally. This project demonstrates modern frontend development skills including React Hooks, Context API, responsive design, and data visualization.
 
+## 🌐 **Live Demo**
+**[Click here to view the live application](https://sreemoyee46.github.io/Digital-CA-Platform)**
+
 ## 🎯 Project Overview
 
 This project was developed as a technical assessment for a Frontend Intern position, showcasing proficiency in React.js development and modern web technologies. The application digitizes traditional CA workflows with a focus on user experience and technical excellence.
