@@ -51,15 +51,6 @@ function Sidebar({ isOpen, onClose }) {
           <span className="sidebar-icon">🧾</span>
           <span>Invoice Creation</span>
         </Link>
-        
-        <Link 
-          to="/charts" 
-          className={`sidebar-link ${location.pathname === '/charts' ? 'active' : ''}`}
-          onClick={handleNavClick}
-        >
-          <span className="sidebar-icon">📈</span>
-          <span>Charts</span>
-        </Link>
       </nav>
       
       <button className="sidebar-logout" onClick={handleLogout}>
