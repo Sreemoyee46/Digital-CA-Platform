@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Digital-CA-Platform/static/css/main.c227763d.css",
-    "main.js": "/Digital-CA-Platform/static/js/main.5328043e.js",
+    "main.js": "/Digital-CA-Platform/static/js/main.d55f3d37.js",
     "index.html": "/Digital-CA-Platform/index.html",
     "main.c227763d.css.map": "/Digital-CA-Platform/static/css/main.c227763d.css.map",
-    "main.5328043e.js.map": "/Digital-CA-Platform/static/js/main.5328043e.js.map"
+    "main.d55f3d37.js.map": "/Digital-CA-Platform/static/js/main.d55f3d37.js.map"
   },
   "entrypoints": [
     "static/css/main.c227763d.css",
-    "static/js/main.5328043e.js"
+    "static/js/main.d55f3d37.js"
   ]
 }
