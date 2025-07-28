@@ -6,7 +6,6 @@ import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
 import InvoiceCreation from './pages/InvoiceCreation';
 import DataInputForm from './components/DataInputForm';
-import ChartsDashboard from './components/ChartsDashboard';
 import Layout from './components/Layout';
 
 function PrivateRoute({ children }) {
@@ -46,16 +45,6 @@ function App() {
             <PrivateRoute>
               <Layout>
                 <InvoiceCreation />
-              </Layout>
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="/charts"
-          element={
-            <PrivateRoute>
-              <Layout>
-                <ChartsDashboard />
               </Layout>
             </PrivateRoute>
           }
