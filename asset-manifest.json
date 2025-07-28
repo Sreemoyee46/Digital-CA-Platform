@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Digital-CA-Platform/static/css/main.69591938.css",
+    "main.js": "/Digital-CA-Platform/static/js/main.6430dbd7.js",
+    "index.html": "/Digital-CA-Platform/index.html",
+    "main.69591938.css.map": "/Digital-CA-Platform/static/css/main.69591938.css.map",
+    "main.6430dbd7.js.map": "/Digital-CA-Platform/static/js/main.6430dbd7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.69591938.css",
+    "static/js/main.6430dbd7.js"
+  ]
+}
