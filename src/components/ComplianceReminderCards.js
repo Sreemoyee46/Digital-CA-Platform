@@ -49,6 +49,15 @@ function ComplianceReminderCards() {
     return diffDays;
   };
 
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', { 
+      year: 'numeric', 
+      month: 'short', 
+      day: 'numeric' 
+    });
+  };
+
   return (
     <section className="compliance-reminder-cards">
       <h3>Compliance Reminders</h3>
@@ -73,12 +82,16 @@ function ComplianceReminderCards() {
               </p>
               <p style={{ 
                 color: isOverdue ? '#ff4444' : isUrgent ? '#ff8800' : '#00aa00',
-                fontWeight: '600'
+                fontWeight: '600',
+                fontSize: '0.9rem'
               }}>
                 {isOverdue 
                   ? `Overdue by ${Math.abs(daysUntilDue)} days` 
                   : `Due in ${daysUntilDue} days`
                 }
+              </p>
+              <p style={{ fontSize: '0.8rem', color: '#888', marginTop: '2px' }}>
+                Due: {formatDate(reminder.dueDate)}
               </p>
             </div>
           );
